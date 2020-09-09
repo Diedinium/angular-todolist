@@ -31,4 +31,8 @@ export class TodoService {
     const url:string = `${this.jsonTodoUrl}/${todo.id}`;
     return this.http.delete<Todo>(url, httpOptions);
   }
+
+  addTodo(todo: Todo):Observable<Todo> {
+    return this.http.post<Todo>(this.jsonTodoUrl, todo, httpOptions);
+  }
 }
