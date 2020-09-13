@@ -22,7 +22,7 @@ export class NamedTodoContainerComponent implements OnInit {
       ]
     }
     let temp2: TodoContainer = {
-      id: 0,
+      id: 1,
       name: "Test container 2",
       Todos: [
         { id: 0, title: "test todo 1", completed: false },
@@ -45,7 +45,6 @@ export class NamedTodoContainerComponent implements OnInit {
   }
 
   deleteTodoGroup(todoGroup: TodoContainer) {
-    console.log(todoGroup);
-    this.todoContainer.filter(t => t.id !== todoGroup.id);
+    this.todoContainer = this.todoContainer.filter(t => t.id !== todoGroup.id);
   }
 }

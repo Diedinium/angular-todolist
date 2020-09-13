@@ -9,15 +9,15 @@ import { TodoContainer } from 'src/app/models/TodoContainer';
 })
 export class NamedTodoItemComponent implements OnInit {
   @Input() todoContainerItem:TodoContainer;
-  @Output() deleteTodoGroup :EventEmitter<TodoContainer> = new EventEmitter();
+  @Output() deleteTodoGroupTest :EventEmitter<TodoContainer> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onDelete(): void {
-    this.deleteTodoGroup.emit(this.todoContainerItem);
+  onDelete(TodoGroup: TodoContainer): void {
+    this.deleteTodoGroupTest.emit(TodoGroup);
   }
 
   deleteTodo() {
