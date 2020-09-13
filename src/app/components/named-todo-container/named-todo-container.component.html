@@ -1,0 +1,4 @@
+<div class="container">
+    <app-named-todo-add (addTodoGroup)="addTodoGroup($event)" (deleteTodoGroup)="deleteTodoGroup($event)"></app-named-todo-add>
+    <app-named-todo-item class="shadow" *ngFor="let todoContainerItem of todoContainer" [todoContainerItem]="todoContainerItem"></app-named-todo-item>
+</div>

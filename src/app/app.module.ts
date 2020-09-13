@@ -10,6 +10,10 @@ import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { AboutComponent } from './components/pages/about/about.component';
+import { NamedTodoContainerComponent } from './components/named-todo-container/named-todo-container.component';
+import { NamedTodoAddComponent } from './components/named-todo-add/named-todo-add.component';
+import { NamedTodoItemComponent } from './components/named-todo-item/named-todo-item.component';
+import { NamedTodoAddItemComponent } from './components/named-todo-add-item/named-todo-add-item.component';
 
 
 @NgModule({
@@ -19,7 +23,11 @@ import { AboutComponent } from './components/pages/about/about.component';
     TodoItemComponent,
     HeaderComponent,
     AddTodoComponent,
-    AboutComponent
+    AboutComponent,
+    NamedTodoContainerComponent,
+    NamedTodoAddComponent,
+    NamedTodoItemComponent,
+    NamedTodoAddItemComponent
   ],
   imports: [
     BrowserModule,
