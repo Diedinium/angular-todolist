@@ -15,20 +15,20 @@ export class NamedTodoContainerComponent implements OnInit {
       id: 0,
       name: "Test container",
       Todos: [
-        { id: 0, title: "test todo 1", completed: false },
-        { id: 1, title: "test todo 2", completed: false },
-        { id: 2, title: "test todo 3", completed: false },
-        { id: 3, title: "test todo 4", completed: false }
+        { id: 1, title: "test todo 1", completed: false },
+        { id: 2, title: "test todo 2", completed: false },
+        { id: 3, title: "test todo 3", completed: false },
+        { id: 4, title: "test todo 4", completed: false }
       ]
     }
     let temp2: TodoContainer = {
       id: 1,
       name: "Test container 2",
       Todos: [
-        { id: 0, title: "test todo 1", completed: false },
-        { id: 1, title: "test todo 2", completed: false },
-        { id: 2, title: "test todo 3", completed: false },
-        { id: 3, title: "test todo 4", completed: false }
+        { id: 1, title: "test todo 1", completed: false },
+        { id: 2, title: "test todo 2", completed: false },
+        { id: 3, title: "test todo 3", completed: false },
+        { id: 4, title: "test todo 4", completed: false }
       ]
     }
     this.todoContainer.push(temp);

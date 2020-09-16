@@ -20,7 +20,22 @@ export class NamedTodoItemComponent implements OnInit {
     this.deleteTodoGroupTest.emit(TodoGroup);
   }
 
-  deleteTodo() {
+  deleteTodoFromList(todo :Todo) {
+    this.todoContainerItem.Todos = this.todoContainerItem.Todos.filter(x => x.id != todo.id);
+  }
 
+  createTodo(todoTitle: string): void {
+    console.log(todoTitle);
+    let idToAdd = 1;
+    if (this.todoContainerItem.Todos.length > 0) {
+      idToAdd = this.todoContainerItem.Todos[this.todoContainerItem.Todos.length - 1].id + 1;
+    }
+    let todoToAdd :Todo = {
+      id: idToAdd,
+      title: todoTitle,
+      completed: false
+    }
+    console.log(idToAdd);
+    this.todoContainerItem.Todos.push(todoToAdd);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { TodoContainer } from 'src/app/models/TodoContainer';
+import { Utilities } from 'src/app/models/Utilities';
 
 @Component({
   selector: 'app-named-todo-add-item',
@@ -9,6 +10,7 @@ import { TodoContainer } from 'src/app/models/TodoContainer';
 export class NamedTodoAddItemComponent implements OnInit {
   todoTitle: string;
   @Output() deleteTodoGroup :EventEmitter<TodoContainer> = new EventEmitter();
+  @Output() addTodoToGroup :EventEmitter<string> = new EventEmitter();
   @Input() todoContainerItem:TodoContainer;
 
   constructor() { }
@@ -17,7 +19,9 @@ export class NamedTodoAddItemComponent implements OnInit {
   }
 
   onSubmit(): void {
-
+    if (!Utilities.isBlank(this.todoTitle) && !Utilities.isWhitespace(this.todoTitle)) {
+      this.addTodoToGroup.emit(this.todoTitle);
+    }
   }
 
   onDelete(): void {

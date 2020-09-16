@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { TodoContainer } from 'src/app/models/TodoContainer';
+import { Utilities } from 'src/app/models/Utilities';
 
 @Component({
   selector: 'app-named-todo-add',
@@ -16,7 +17,7 @@ export class NamedTodoAddComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (!this.isBlank(this.name) && !this.isWhitespace(this.name)) 
+    if (!Utilities.isBlank(this.name) && !Utilities.isWhitespace(this.name)) 
     {
       const todoGroup = {
         name: this.name,
@@ -28,13 +29,5 @@ export class NamedTodoAddComponent implements OnInit {
     else {
       this.name = null;
     }
-  }
-
-  isBlank(str):boolean {
-    return (!str || /^\s*$/.test(str));
-  }
-  
-  isWhitespace(str):boolean {
-    return (str.length === 0 || !str.trim());
   }
 }
